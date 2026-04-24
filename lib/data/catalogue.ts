@@ -606,11 +606,11 @@ export const mockProducts: Product[] = [
     vendor: "Thermofin",
     productType: "Dry Cooler",
     shortDescription:
-      "V-shape industrial dry cooler, 250 kW nominal rating, with EC fans and optional adiabatic pre-cooling pads.",
+      "V-shape industrial dry cooler, 250 kW nominal rating at Δt 10 K. Rejects heat from a fluid loop (typically water–glycol) to ambient air through two coil banks and six EC fans. Used as the dry-side heat-rejection stage of a chiller, process loop, or data-centre free-cooling system.",
     description:
-      "The TDHF series is Thermofin's workhorse V-shape dry cooler for process and HVAC cooling. High-efficiency EC fans keep sound levels low, and the unit is ready for optional adiabatic pre-cooling pads when ambient conditions push beyond dry-mode capacity.",
+      "TDHF 250 is a V-shape unit from Thermofin's TDHF range — two coil banks arranged in a V around six EC fans, giving 250 kW of rejection capacity in a footprint smaller than a horizontal or vertical unit of equivalent duty. It is a fluid heat exchanger, not a refrigerant condenser: process or HVAC fluid (commonly water–glycol) enters a DN100 flanged inlet, passes through the coils, and rejects its heat to ambient air. EC fans run at variable speed under a 0–10 V / Modbus signal, so during partial-load or cool-ambient operation the unit modulates fan power instead of cycling — keeping sound levels below 58 dB(A) at 10 m and reducing wear. Distinction from a refrigerant condenser: this unit does not accept refrigerant directly — it sits on the secondary fluid loop after a chiller, or replaces the chiller entirely for free-cooling duty below the design ambient. Distinction from the TDHF adiabatic pad kit: TDHF on its own consumes no water but loses capacity as ambient rises; the adiabatic kit is the optional upgrade that recovers that capacity on peak days.",
     application:
-      "Process cooling, data-centre free cooling, and HVAC reject loops where a low-sound, high-efficiency dry cooler is required.",
+      "Heat rejection on the secondary fluid loop of industrial process cooling (plastics, food, chemical plants), data-centre free cooling (replaces mechanical chillers during cool-ambient hours — typical across Baltic and Nordic climates), and HVAC chiller reject loops where the plant room needs low-noise, low-maintenance rejection in a small footprint.",
     certifications: "CE, EN 1886 rated housing",
     leadTime: "8–12 weeks",
     solutionUrl: "https://virasmart.eu/thermal/thermofin-cooling-solutions",
@@ -640,11 +640,11 @@ export const mockProducts: Product[] = [
     vendor: "Thermofin",
     productType: "Adiabatic Accessory",
     shortDescription:
-      "Retrofit adiabatic pre-cooling pad kit for Thermofin TDHF series — extends dry-mode performance envelope on hot days.",
+      "Retrofit adiabatic pre-cooling kit for Thermofin TDHF dry coolers. Wetted cellulose pads lower the intake-air temperature on hot days, restoring the capacity the dry cooler would otherwise lose when ambient rises above the design point. Water is consumed only above a configurable setpoint.",
     description:
-      "A drop-in adiabatic pad kit engineered for the Thermofin TDHF range. Pads are wetted only when ambient temperature exceeds a configurable threshold, reducing water use while recovering capacity on peak days.",
+      "The TDHF adiabatic pad kit is a bolt-on accessory — it does not work on its own. When ambient temperature exceeds a configurable setpoint, water is fed to the cellulose pads through a 3/4″ BSP filtered connection; incoming air passes through the wetted pads and drops by several degrees before it reaches the coil bank, so the dry cooler sees cooler intake air and recovers the duty lost to rising ambient. Below the setpoint the pads stay dry — so over a Baltic or Nordic year, water consumption is limited to summer peaks. Pad material is cellulose, anti-algae treated; filter and activation valves are included. Distinction from the bare TDHF dry cooler: the base unit consumes no water but loses capacity on hot days; the pad kit adds summer water consumption in exchange for that recovered capacity. Engineering implication: a TDHF sized for design ambient + adiabatic pad kit typically replaces a larger dry cooler sized for worst-case ambient — smaller footprint, lower fan power most of the year, water use only at peak.",
     application:
-      "Capacity recovery for existing TDHF installations in Southern European climates or peak-demand industrial sites.",
+      "Capacity recovery on existing TDHF installations that see summer ambient peaks (Southern European climates, peak-demand industrial sites); new data-centre free-cooling loops where the alternative is doubling the coil bank to cover the hottest hours of the year. Commissioned together with the dry cooler or retrofitted on the installed base.",
     certifications: "CE",
     leadTime: "4–6 weeks",
     solutionUrl: "https://virasmart.eu/thermal/thermofin-cooling-solutions",
