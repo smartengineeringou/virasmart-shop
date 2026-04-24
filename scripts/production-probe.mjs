@@ -56,7 +56,7 @@ const ROUTES = [
   "/collections/dry-coolers",
   "/products/ekinex-ek-f50-tp",
   "/products/ekinex-ek-sr-tp",
-  "/products/displine-dpl-ipad-11",
+  "/products/displine-companion-wall-2-ipad-11-white",
   "/products/thermofin-tdhf-250",
   "/products/thermofin-adiabatic-pad-kit",
   "/quotation",
