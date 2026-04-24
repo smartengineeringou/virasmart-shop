@@ -1,4 +1,5 @@
 import type { Datasheet } from "@/lib/shopify/types";
+import { relForHref } from "@/lib/links/rel";
 
 interface ProductDatasheetsProps {
   datasheets: Datasheet[];
@@ -40,7 +41,7 @@ export function ProductDatasheets({ datasheets, sku }: ProductDatasheetsProps) {
               <a
                 href={href}
                 target={stub ? undefined : "_blank"}
-                rel={stub ? undefined : "noreferrer"}
+                rel={stub ? undefined : relForHref(doc.url)}
                 className="flex items-center gap-3 px-5 py-3 hover:bg-surface transition-colors"
               >
                 <span className="font-mono text-xs bg-brand/10 text-brand px-2 py-1 rounded">

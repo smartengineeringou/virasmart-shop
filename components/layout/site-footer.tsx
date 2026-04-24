@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { getFooterMenu } from "@/lib/shopify/client";
+import { NavLink } from "@/components/layout/nav-link";
 
 export async function SiteFooter() {
   const groups = await getFooterMenu();
@@ -23,12 +23,12 @@ export async function SiteFooter() {
             <ul className="space-y-1.5">
               {group.items.map((item) => (
                 <li key={item.href}>
-                  <Link
+                  <NavLink
                     href={item.href}
                     className="text-sm text-foreground hover:text-brand transition-colors"
                   >
                     {item.label}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
             </ul>

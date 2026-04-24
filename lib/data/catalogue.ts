@@ -14,6 +14,8 @@ export const mockCollections: Collection[] = [
       "Engineered KNX components for smart homes and buildings. Ekinex, Displine, sensors, actuators and gateways — request a quotation for your project.",
     tags: ["Smart Home", "KNX"],
     productHandles: ["ekinex-ek-f50-tp", "ekinex-ek-sr-tp", "displine-dpl-ipad-11"],
+    solutionUrl: "https://virasmart.eu/smart",
+    solutionTitle: "Smart Building Automation — engineering services",
   },
   {
     handle: "thermal-equipment",
@@ -25,6 +27,8 @@ export const mockCollections: Collection[] = [
       "Full range of industrial thermal equipment: dry coolers, adiabatic cooling, heat exchangers, and cooling-system components. Project enquiries welcome.",
     tags: ["Thermal", "Industrial"],
     productHandles: ["thermofin-tdhf-250", "thermofin-adiabatic-pad-kit"],
+    solutionUrl: "https://virasmart.eu/thermal",
+    solutionTitle: "Thermal Systems — engineering services",
   },
   {
     handle: "ekinex",
@@ -37,6 +41,8 @@ export const mockCollections: Collection[] = [
     tags: ["Smart Home", "KNX", "Brand"],
     parentHandle: "smart-home-knx",
     productHandles: ["ekinex-ek-f50-tp", "ekinex-ek-sr-tp"],
+    solutionUrl: "https://virasmart.eu/smart/ekinex-knx-systems",
+    solutionTitle: "Ekinex KNX systems — engineering context",
   },
   {
     handle: "displine",
@@ -49,6 +55,8 @@ export const mockCollections: Collection[] = [
     tags: ["Smart Home", "AV Integration", "Brand"],
     parentHandle: "smart-home-knx",
     productHandles: ["displine-dpl-ipad-11"],
+    solutionUrl: "https://virasmart.eu/smart/displine-tablet-mounting-solutions",
+    solutionTitle: "Displine tablet mounting — engineering context",
   },
   {
     handle: "thermofin",
@@ -61,6 +69,8 @@ export const mockCollections: Collection[] = [
     tags: ["Thermal", "Industrial", "Brand"],
     parentHandle: "thermal-equipment",
     productHandles: ["thermofin-tdhf-250", "thermofin-adiabatic-pad-kit"],
+    solutionUrl: "https://virasmart.eu/thermal/thermofin-cooling-solutions",
+    solutionTitle: "Thermofin cooling solutions — engineering context",
   },
   {
     handle: "dry-coolers",
@@ -268,6 +278,7 @@ export const mockMainMenu: NavItem[] = [
     ],
   },
   { label: "Collections", href: "/collections" },
+  { label: "Main website", href: "https://virasmart.eu" },
   { label: "Request Quotation", href: "/quotation", highlight: true },
 ];
 

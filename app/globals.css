@@ -4,33 +4,52 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Virasmart brand — clean, technical, premium */
-  --background: oklch(0.99 0 0);           /* near-white */
-  --foreground: oklch(0.13 0 0);           /* near-black */
-  --surface: oklch(0.965 0 0);             /* light grey surface */
-  --brand: oklch(0.45 0.18 250);           /* Virasmart blue */
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.13 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.13 0 0);
-  --primary: oklch(0.45 0.18 250);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.965 0 0);
-  --secondary-foreground: oklch(0.13 0 0);
-  --muted: oklch(0.965 0 0);
-  --muted-foreground: oklch(0.50 0 0);
-  --accent: oklch(0.96 0.04 250);
-  --accent-foreground: oklch(0.45 0.18 250);
+  /* ------------------------------------------------------------------
+     Virasmart official palette (single source of truth — mirrors
+     virasmart-website/src/app/globals.css):
+       Thermal & Energy            Navy         #282973
+       Smart Home & Bldg Auto      Turquoise    #007078
+       Construction & Supervision  Orange       #E36A2E
+       Graphite                                 #231F20
+       Platinum                                 #A0A5AA
+     Navy = site-wide "chrome" / primary (not a direction accent).
+     ------------------------------------------------------------------ */
+  --vs-brand-navy: #282973;
+  --vs-brand-turquoise: #007078;
+  --vs-brand-orange: #E36A2E;
+  --vs-brand-graphite: #231F20;
+  --vs-brand-platinum: #A0A5AA;
+
+  --vs-accent-smart: var(--vs-brand-turquoise);
+  --vs-accent-thermal: var(--vs-brand-navy);
+  --vs-accent-supervision: var(--vs-brand-orange);
+
+  --background: #FFFFFF;
+  --foreground: var(--vs-brand-graphite);
+  --surface: #F2F3F4;
+  --brand: var(--vs-brand-navy);
+  --card: #FFFFFF;
+  --card-foreground: var(--vs-brand-graphite);
+  --popover: #FFFFFF;
+  --popover-foreground: var(--vs-brand-graphite);
+  --primary: var(--vs-brand-navy);
+  --primary-foreground: #FFFFFF;
+  --secondary: #F2F3F4;
+  --secondary-foreground: var(--vs-brand-graphite);
+  --muted: #F2F3F4;
+  --muted-foreground: #575455;
+  --accent: #E8E9F3;                        /* navy-tinted surface */
+  --accent-foreground: var(--vs-brand-navy);
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.90 0 0);
-  --input: oklch(0.90 0 0);
-  --ring: oklch(0.45 0.18 250);
-  --chart-1: oklch(0.45 0.18 250);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --destructive-foreground: #FFFFFF;
+  --border: #E0E2E4;
+  --input: #E0E2E4;
+  --ring: var(--vs-brand-navy);
+  --chart-1: var(--vs-brand-navy);
+  --chart-2: var(--vs-brand-turquoise);
+  --chart-3: var(--vs-brand-orange);
+  --chart-4: #5F61B0;
+  --chart-5: #22A8B1;
   --radius: 0.5rem;
   --sidebar: oklch(0.965 0 0);
   --sidebar-foreground: oklch(0.13 0 0);
@@ -106,6 +125,9 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  --color-smart: var(--vs-accent-smart);
+  --color-thermal: var(--vs-accent-thermal);
+  --color-supervision: var(--vs-accent-supervision);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

@@ -1,11 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import type { NavItem } from "@/lib/shopify/types";
+import { NavLink } from "@/components/layout/nav-link";
 
 interface MobileNavProps {
   items: NavItem[];
 }
+
+const isExternal = (href: string) => /^https?:\/\//i.test(href);
 
 export function MobileNav({ items }: MobileNavProps) {
   return (
@@ -40,32 +42,54 @@ export function MobileNav({ items }: MobileNavProps) {
         className="absolute right-0 top-full mt-2 w-72 bg-background border border-border rounded-lg shadow-sm overflow-hidden z-40"
       >
         <ul className="divide-y divide-border">
-          {items.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className={`block px-4 py-3 text-sm font-medium ${
-                  item.highlight ? "bg-brand text-white" : "text-foreground hover:bg-surface"
-                }`}
-              >
-                {item.label}
-              </Link>
-              {item.children && item.children.length > 0 && (
-                <ul className="bg-surface border-t border-border">
-                  {item.children.map((child) => (
-                    <li key={child.href}>
-                      <Link
-                        href={child.href}
-                        className="block px-6 py-2 text-sm text-muted-foreground hover:text-brand"
-                      >
-                        {child.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
+          {items.map((item) => {
+            const external = isExternal(item.href);
+            return (
+              <li key={item.href}>
+                <NavLink
+                  href={item.href}
+                  className={`flex items-center justify-between gap-2 px-4 py-3 text-sm font-medium ${
+                    item.highlight
+                      ? "bg-brand text-white"
+                      : "text-foreground hover:bg-surface"
+                  }`}
+                >
+                  <span>{item.label}</span>
+                  {external && (
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 10 10"
+                      fill="none"
+                      className="opacity-60"
+                      aria-hidden
+                    >
+                      <path
+                        d="M3 1h6v6M9 1L4 6M1 9l4-4"
+                        stroke="currentColor"
+                        strokeWidth="1.2"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  )}
+                </NavLink>
+                {!external && item.children && item.children.length > 0 && (
+                  <ul className="bg-surface border-t border-border">
+                    {item.children.map((child) => (
+                      <li key={child.href}>
+                        <NavLink
+                          href={child.href}
+                          className="block px-6 py-2 text-sm text-muted-foreground hover:text-brand"
+                        >
+                          {child.label}
+                        </NavLink>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </details>

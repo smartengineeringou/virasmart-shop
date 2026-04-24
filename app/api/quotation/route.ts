@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sendRfqEmail } from "@/lib/email/send-rfq";
 import type { QuotationContact, QuotationLineItem } from "@/lib/shopify/types";
 
 interface QuotationPayload {
@@ -7,30 +8,52 @@ interface QuotationPayload {
   submittedAt: string;
 }
 
-// Stub endpoint. Swap the console.log for:
-//   - Shopify Draft Order API (store the RFQ as a draft order), or
-//   - a transactional email service (Resend / SendGrid), or
-//   - a CRM webhook (HubSpot / Pipedrive).
+function isValid(payload: unknown): payload is QuotationPayload {
+  if (!payload || typeof payload !== "object") return false;
+  const { contact, items } = payload as Partial<QuotationPayload>;
+  if (!contact || typeof contact !== "object") return false;
+  if (!Array.isArray(items) || items.length === 0) return false;
+  if (!contact.email || typeof contact.email !== "string") return false;
+  if (!contact.company || !contact.contactName) return false;
+  return true;
+}
+
 export async function POST(request: Request) {
-  let payload: QuotationPayload;
+  let raw: unknown;
   try {
-    payload = (await request.json()) as QuotationPayload;
+    raw = await request.json();
   } catch {
     return NextResponse.json({ ok: false, error: "invalid_json" }, { status: 400 });
   }
 
-  if (!payload.contact?.email || payload.items?.length === 0) {
+  if (!isValid(raw)) {
     return NextResponse.json(
       { ok: false, error: "missing_required_fields" },
       { status: 422 },
     );
   }
 
-  console.info("[quotation] received RFQ", {
-    company: payload.contact.company,
-    email: payload.contact.email,
-    itemCount: payload.items.length,
-  });
+  const payload = raw;
+  const reference = `RFQ-${Date.now()}`;
 
-  return NextResponse.json({ ok: true, reference: `RFQ-${Date.now()}` });
+  try {
+    const result = await sendRfqEmail({
+      reference,
+      contact: payload.contact,
+      items: payload.items,
+      submittedAt: payload.submittedAt || new Date().toISOString(),
+    });
+
+    return NextResponse.json({
+      ok: true,
+      reference,
+      delivered: result.provider,
+    });
+  } catch (err) {
+    console.error("[rfq] failed to send", err);
+    return NextResponse.json(
+      { ok: false, error: "email_delivery_failed", reference },
+      { status: 502 },
+    );
+  }
 }

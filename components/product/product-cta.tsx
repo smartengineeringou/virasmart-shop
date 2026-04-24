@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { Product } from "@/lib/shopify/types";
 import { useQuotation } from "@/lib/quotation/quotation-context";
+import { relForHref } from "@/lib/links/rel";
 
 interface ProductCtaProps {
   product: Product;
@@ -83,7 +84,7 @@ export function ProductCta({ product }: ProductCtaProps) {
         <a
           href={product.solutionUrl}
           target="_blank"
-          rel="noreferrer"
+          rel={relForHref(product.solutionUrl)}
           className="block text-xs text-brand font-mono hover:underline"
         >
           ↗ See related Virasmart solution page

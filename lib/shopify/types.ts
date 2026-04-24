@@ -62,6 +62,13 @@ export interface Collection {
   tags: string[];
   productHandles: string[];
   parentHandle?: string;
+  /**
+   * Optional engineering-context link to the matching solution page on
+   * virasmart.eu. Rendered as a prominent reverse-link card on the collection
+   * page so buyers can switch from product selection to engineering context.
+   */
+  solutionUrl?: string;
+  solutionTitle?: string;
 }
 
 export interface NavItem {
