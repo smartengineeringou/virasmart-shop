@@ -47,7 +47,7 @@ export const mockCollections: Collection[] = [
     handle: "ekinex",
     title: "Ekinex KNX Products",
     description:
-      "Italian-engineered KNX touch interfaces, push-button panels, and control devices for premium residential and commercial installations.",
+      "Italian-engineered KNX keypads, room controllers, and DIN-rail devices. Form 50 (55 × 55 mm) keypads drop into the standard 55-series frames already specified across most KNX projects, so the Ekinex range fits residential, hotel, and office installations without frame redesign.",
     metaTitle: "Ekinex KNX Systems & Interfaces | Virasmart B2B",
     metaDescription:
       "Professional Ekinex KNX touch interfaces, push-button panels, and smart-home control devices. Request a quotation for your project.",
@@ -119,11 +119,11 @@ export const mockProducts: Product[] = [
     vendor: "Ekinex",
     productType: "KNX Touch Interface",
     shortDescription:
-      "5-fold KNX push-button interface with integrated temperature sensor and RGB status LEDs. Suitable for residential and commercial KNX installations.",
+      "5-fold capacitive-touch KNX keypad in the Form 50 (55 × 55 mm) format. Each button is ETS-programmable with RGB LED status feedback; an integrated room temperature probe sends its reading directly on the KNX bus. Flush-mounted in a 503 wall box.",
     description:
-      "The Ekinex EK-F50-TP is a flush-mounted 5-fold KNX push-button interface in the Form 50 range. Each button is individually configurable via ETS and includes an RGB status LED. An integrated temperature sensor can feed room data directly to the KNX bus, eliminating the need for a separate sensor on most HVAC projects.",
+      "The EK-F50-TP is a keypad from Ekinex's Form 50 range — glass-front, 55 × 55 mm, designed to drop into the 55-series frames already specified across most KNX projects (Gira / Jung / Berker / Merten). Five capacitive buttons replace a stack of separate devices: the scene keypad, the status indicator (via per-button RGB LEDs), and the room temperature sensor. Each button is fully defined in ETS — short press, long press, toggle, scene, forced operation, 1-bit / 1-byte / percent values — along with LED colour / brightness per state. Because the temperature probe is integrated, on HVAC-aware KNX installations the panel also replaces the dedicated room thermostat. Distinction from EK-SR-TP: F50-TP gives LED-only feedback and is the simpler keypad; SR-TP adds a 2.4\" touchscreen and on-device HVAC logic for rooms where a visible setpoint or mode toggle is needed.",
     application:
-      "KNX building automation: lighting control, blinds / shutters, HVAC scenes, and scene recall in premium residential and commercial spaces.",
+      "Primary KNX room keypad in residential, hotel, and office installations — scene recall, lighting, blinds, and room-level temperature sensing consolidated into one flush device. Typical role: keypad at the entrance of living rooms, bedrooms, hotel suites, and meeting rooms. Programmed from ETS via the Ekinex application program.",
     certifications: "KNX certified, CE marked",
     leadTime: "4–6 weeks",
     solutionUrl: "https://virasmart.eu/smart/ekinex-knx-systems",
@@ -155,11 +155,11 @@ export const mockProducts: Product[] = [
     vendor: "Ekinex",
     productType: "KNX Room Controller",
     shortDescription:
-      "KNX room controller with capacitive touch display, scene recall, and HVAC control. Fits standard 503 wall box.",
+      "KNX room controller in Form 50 (55 × 55 mm) format combining a 2.4\" capacitive touchscreen, scene keypad logic, and on-device HVAC control. Consolidates the thermostat + keypad + mode controller into one flush device. Programmed from ETS.",
     description:
-      "The EK-SR-TP combines a touchscreen, scene recall, and HVAC controller in a single KNX device. It supports up to 24 functions across scenes, lighting, shutters, and climate, configured entirely through ETS.",
+      "The EK-SR-TP is a single-device room controller — scene keypad, KNX room thermostat, and HVAC controller in one Form 50 unit. The 2.4\" touch display shows setpoint, mode (heat / cool / fan), and up to 24 configured functions: scenes, lighting circuits, blind groups, mode toggles. HVAC logic runs locally on the device, so for simple per-room heating / cooling loops (typical hotel suite, residential bedroom) no additional KNX room controller is required on the DIN rail. Glass front, 55 × 55 mm, fits Gira / Jung / Berker / Merten 55-series frames already specified in most KNX installations. Distinction from EK-F50-TP: SR-TP adds the display and local HVAC logic for rooms that need a visible setpoint and mode toggle; F50-TP is the LED-only keypad for rooms where a separate room-level controller already handles HVAC.",
     application:
-      "Single-point room control for hotels, offices, and residential projects where a single KNX device replaces thermostats plus scene keypads.",
+      "Single-touchpoint room control in hotel suites, residential bedrooms, and offices with per-room HVAC. Replaces the thermostat + scene keypad + mode button combination with one flush device. Programmed from ETS via the Ekinex application program.",
     certifications: "KNX certified, CE marked",
     leadTime: "6–8 weeks",
     solutionUrl: "https://virasmart.eu/smart/ekinex-knx-systems",
