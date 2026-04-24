@@ -10,6 +10,10 @@ next.user-config.*
 # Environment variables
 .env*.local
 
+# Local-only pricing / source data — never serve or commit.
+# Non-served location (outside public/) used by scripts for one-off ingest.
+lib/data/_sources/
+
 # Common ignores
 node_modules
 .next/
