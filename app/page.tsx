@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getAllCollections, getAllProducts } from "@/lib/shopify/client";
 import { CollectionCard } from "@/components/collection/collection-card";
 import { ProductGrid } from "@/components/product/product-grid";
+import { UseCaseSection } from "@/components/home/use-case-section";
 
 const pillars = [
   {
@@ -102,6 +103,9 @@ export default async function HomePage() {
           </p>
         </div>
       </section>
+
+      {/* ───── How it works in real projects ─────────────────────── */}
+      <UseCaseSection />
 
       {/* ───── How we work ───────────────────────────────────────── */}
       <section className="space-y-6">
