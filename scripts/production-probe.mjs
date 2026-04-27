@@ -54,11 +54,11 @@ const ROUTES = [
   "/collections/displine",
   "/collections/thermofin",
   "/collections/dry-coolers",
-  "/products/ekinex-ek-f50-tp",
-  "/products/ekinex-ek-sr-tp",
   "/products/displine-companion-wall-2-ipad-11-white",
-  "/products/thermofin-tdhf-250",
-  "/products/thermofin-adiabatic-pad-kit",
+  "/products/displine-companion-wall-home-ipad-10-9-white",
+  "/products/displine-dame-wall-2-ipad-11-black",
+  "/products/displine-sunset-ipad-11-black",
+  "/products/displine-tablet-frame-control4-10-black",
   "/quotation",
   "/legal/privacy",
   "/legal/terms",
@@ -91,11 +91,11 @@ console.log("\n  sitemap + robots");
     "sitemap includes canonical home URL",
   );
   check(
-    r.text.includes("/collections/ekinex"),
+    r.text.includes("/collections/displine"),
     "sitemap includes branded collection",
   );
   check(
-    r.text.includes("/products/ekinex-ek-f50-tp"),
+    r.text.includes("/products/displine-companion-wall-2-ipad-11-white"),
     "sitemap includes product",
   );
   check(!r.text.includes("/implementation-plan"), "sitemap excludes /implementation-plan");
@@ -142,16 +142,16 @@ console.log("\n  RFQ API validation");
 
 console.log("\n  content markers (spot-check on branded pages)");
 {
-  const p = await body("/products/ekinex-ek-f50-tp");
+  const p = await body("/products/displine-companion-wall-2-ipad-11-white");
   check(/Add to quotation/.test(p.text), "product: 'Add to quotation' CTA present");
   check(/Price on request/.test(p.text), "product: 'Price on request' copy present");
   check(/Technical Specifications/.test(p.text), "product: specs panel present");
   check(!/Add to cart|Buy now/i.test(p.text), "product: no cart/buy-now CTA");
 
-  const c = await body("/collections/ekinex");
+  const c = await body("/collections/displine");
   check(/Engineering context/.test(c.text), "collection: engineering-context card present");
   check(
-    /virasmart\.eu\/smart\/ekinex-knx-systems/.test(c.text),
+    /virasmart\.eu\/smart\/displine-tablet-mounting-solutions/.test(c.text),
     "collection: reverse link to virasmart.eu solution page",
   );
 

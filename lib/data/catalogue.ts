@@ -14,8 +14,6 @@ export const mockCollections: Collection[] = [
       "Engineered KNX components for smart homes and buildings. Ekinex, Displine, sensors, actuators and gateways — request a quotation for your project.",
     tags: ["Smart Home", "KNX"],
     productHandles: [
-      "ekinex-ek-f50-tp",
-      "ekinex-ek-sr-tp",
       "displine-companion-wall-2-ipad-11-white",
       "displine-companion-wall-2-ipad-11-black",
       "displine-companion-wall-home-ipad-10-9-white",
@@ -39,7 +37,7 @@ export const mockCollections: Collection[] = [
     metaDescription:
       "Full range of industrial thermal equipment: dry coolers, adiabatic cooling, heat exchangers, and cooling-system components. Project enquiries welcome.",
     tags: ["Thermal", "Industrial"],
-    productHandles: ["thermofin-tdhf-250", "thermofin-adiabatic-pad-kit"],
+    productHandles: [],
     solutionUrl: "https://virasmart.eu/thermal",
     solutionTitle: "Thermal Systems — engineering services",
   },
@@ -53,7 +51,7 @@ export const mockCollections: Collection[] = [
       "Professional Ekinex KNX touch interfaces, push-button panels, and smart-home control devices. Request a quotation for your project.",
     tags: ["Smart Home", "KNX", "Brand"],
     parentHandle: "smart-home-knx",
-    productHandles: ["ekinex-ek-f50-tp", "ekinex-ek-sr-tp"],
+    productHandles: [],
     solutionUrl: "https://virasmart.eu/smart/ekinex-knx-systems",
     solutionTitle: "Ekinex KNX systems — engineering context",
   },
@@ -92,7 +90,7 @@ export const mockCollections: Collection[] = [
       "Thermofin dry coolers, adiabatic pre-cooling systems, and industrial heat exchangers. Technical specifications and project enquiries.",
     tags: ["Thermal", "Industrial", "Brand"],
     parentHandle: "thermal-equipment",
-    productHandles: ["thermofin-tdhf-250", "thermofin-adiabatic-pad-kit"],
+    productHandles: [],
     solutionUrl: "https://virasmart.eu/thermal/thermofin-cooling-solutions",
     solutionTitle: "Thermofin cooling solutions — engineering context",
   },
@@ -106,81 +104,11 @@ export const mockCollections: Collection[] = [
       "Industrial dry coolers for process cooling, HVAC, and data-centre applications. Thermofin and custom configurations available.",
     tags: ["Thermal", "Industrial"],
     parentHandle: "thermal-equipment",
-    productHandles: ["thermofin-tdhf-250"],
+    productHandles: [],
   },
 ];
 
 export const mockProducts: Product[] = [
-  {
-    id: "gid://virasmart/Product/ekinex-ek-f50-tp",
-    handle: "ekinex-ek-f50-tp",
-    title: "EK-F50-TP — KNX Touch Button Panel, 5-fold",
-    sku: "EK-F50-TP-WH",
-    vendor: "Ekinex",
-    productType: "KNX Touch Interface",
-    shortDescription:
-      "5-fold capacitive-touch KNX keypad in the Form 50 (55 × 55 mm) format. Each button is ETS-programmable with RGB LED status feedback; an integrated room temperature probe sends its reading directly on the KNX bus. Flush-mounted in a 503 wall box.",
-    description:
-      "The EK-F50-TP is a keypad from Ekinex's Form 50 range — glass-front, 55 × 55 mm, designed to drop into the 55-series frames already specified across most KNX projects (Gira / Jung / Berker / Merten). Five capacitive buttons replace a stack of separate devices: the scene keypad, the status indicator (via per-button RGB LEDs), and the room temperature sensor. Each button is fully defined in ETS — short press, long press, toggle, scene, forced operation, 1-bit / 1-byte / percent values — along with LED colour / brightness per state. Because the temperature probe is integrated, on HVAC-aware KNX installations the panel also replaces the dedicated room thermostat. Distinction from EK-SR-TP: F50-TP gives LED-only feedback and is the simpler keypad; SR-TP adds a 2.4\" touchscreen and on-device HVAC logic for rooms where a visible setpoint or mode toggle is needed.",
-    application:
-      "Primary KNX room keypad in residential, hotel, and office installations — scene recall, lighting, blinds, and room-level temperature sensing consolidated into one flush device. Typical role: keypad at the entrance of living rooms, bedrooms, hotel suites, and meeting rooms. Programmed from ETS via the Ekinex application program.",
-    certifications: "KNX certified, CE marked",
-    leadTime: "4–6 weeks",
-    solutionUrl: "https://virasmart.eu/smart/ekinex-knx-systems",
-    images: [],
-    specs: [
-      { label: "Bus voltage", value: "21–30 V DC (KNX)" },
-      { label: "Bus current", value: "≤ 10 mA" },
-      { label: "Buttons", value: "5 independent, ETS-programmable" },
-      { label: "Status LEDs", value: "RGB per button" },
-      { label: "Temperature sensor", value: "Integrated, PT1000-equivalent accuracy" },
-      { label: "Mounting", value: "Flush, 503 box" },
-      { label: "Finish", value: "White glass (WH), also in black / grey" },
-    ],
-    datasheets: [
-      {
-        label: "EK-F50-TP datasheet (EN)",
-        url: "https://cdn.virasmart.eu/datasheets/ek-f50-tp.pdf",
-      },
-    ],
-    collectionHandles: ["smart-home-knx", "ekinex"],
-    tags: ["KNX", "Touch Panel", "Ekinex"],
-    availableForQuotation: true,
-  },
-  {
-    id: "gid://virasmart/Product/ekinex-ek-sr-tp",
-    handle: "ekinex-ek-sr-tp",
-    title: "EK-SR-TP — KNX Room Controller with Display",
-    sku: "EK-SR-TP-BK",
-    vendor: "Ekinex",
-    productType: "KNX Room Controller",
-    shortDescription:
-      "KNX room controller in Form 50 (55 × 55 mm) format combining a 2.4\" capacitive touchscreen, scene keypad logic, and on-device HVAC control. Consolidates the thermostat + keypad + mode controller into one flush device. Programmed from ETS.",
-    description:
-      "The EK-SR-TP is a single-device room controller — scene keypad, KNX room thermostat, and HVAC controller in one Form 50 unit. The 2.4\" touch display shows setpoint, mode (heat / cool / fan), and up to 24 configured functions: scenes, lighting circuits, blind groups, mode toggles. HVAC logic runs locally on the device, so for simple per-room heating / cooling loops (typical hotel suite, residential bedroom) no additional KNX room controller is required on the DIN rail. Glass front, 55 × 55 mm, fits Gira / Jung / Berker / Merten 55-series frames already specified in most KNX installations. Distinction from EK-F50-TP: SR-TP adds the display and local HVAC logic for rooms that need a visible setpoint and mode toggle; F50-TP is the LED-only keypad for rooms where a separate room-level controller already handles HVAC.",
-    application:
-      "Single-touchpoint room control in hotel suites, residential bedrooms, and offices with per-room HVAC. Replaces the thermostat + scene keypad + mode button combination with one flush device. Programmed from ETS via the Ekinex application program.",
-    certifications: "KNX certified, CE marked",
-    leadTime: "6–8 weeks",
-    solutionUrl: "https://virasmart.eu/smart/ekinex-knx-systems",
-    images: [],
-    specs: [
-      { label: "Display", value: "2.4\" capacitive touch" },
-      { label: "Functions", value: "Up to 24 (scenes, lighting, HVAC, shutters)" },
-      { label: "Bus voltage", value: "21–30 V DC (KNX)" },
-      { label: "Mounting", value: "Flush, 503 box" },
-      { label: "Finish", value: "Black glass (BK), also in white / grey" },
-    ],
-    datasheets: [
-      {
-        label: "EK-SR-TP datasheet (EN)",
-        url: "https://cdn.virasmart.eu/datasheets/ek-sr-tp.pdf",
-      },
-    ],
-    collectionHandles: ["smart-home-knx", "ekinex"],
-    tags: ["KNX", "Room Controller", "Ekinex"],
-    availableForQuotation: true,
-  },
   // ──────────────────────────────────────────────────────────────────────
   // Displine — iPad and Control 4 wall-mounts + accessories.
   //
@@ -596,73 +524,6 @@ export const mockProducts: Product[] = [
     datasheets: [],
     collectionHandles: ["smart-home-knx", "displine"],
     tags: ["Displine", "Power", "PoE", "Accessory"],
-    availableForQuotation: true,
-  },
-  {
-    id: "gid://virasmart/Product/thermofin-tdhf-250",
-    handle: "thermofin-tdhf-250",
-    title: "Thermofin TDHF 250 — Industrial V-Shape Dry Cooler",
-    sku: "TF-TDHF-250",
-    vendor: "Thermofin",
-    productType: "Dry Cooler",
-    shortDescription:
-      "V-shape industrial dry cooler, 250 kW nominal rating at Δt 10 K. Rejects heat from a fluid loop (typically water–glycol) to ambient air through two coil banks and six EC fans. Used as the dry-side heat-rejection stage of a chiller, process loop, or data-centre free-cooling system.",
-    description:
-      "TDHF 250 is a V-shape unit from Thermofin's TDHF range — two coil banks arranged in a V around six EC fans, giving 250 kW of rejection capacity in a footprint smaller than a horizontal or vertical unit of equivalent duty. It is a fluid heat exchanger, not a refrigerant condenser: process or HVAC fluid (commonly water–glycol) enters a DN100 flanged inlet, passes through the coils, and rejects its heat to ambient air. EC fans run at variable speed under a 0–10 V / Modbus signal, so during partial-load or cool-ambient operation the unit modulates fan power instead of cycling — keeping sound levels below 58 dB(A) at 10 m and reducing wear. Distinction from a refrigerant condenser: this unit does not accept refrigerant directly — it sits on the secondary fluid loop after a chiller, or replaces the chiller entirely for free-cooling duty below the design ambient. Distinction from the TDHF adiabatic pad kit: TDHF on its own consumes no water but loses capacity as ambient rises; the adiabatic kit is the optional upgrade that recovers that capacity on peak days.",
-    application:
-      "Heat rejection on the secondary fluid loop of industrial process cooling (plastics, food, chemical plants), data-centre free cooling (replaces mechanical chillers during cool-ambient hours — typical across Baltic and Nordic climates), and HVAC chiller reject loops where the plant room needs low-noise, low-maintenance rejection in a small footprint.",
-    certifications: "CE, EN 1886 rated housing",
-    leadTime: "8–12 weeks",
-    solutionUrl: "https://virasmart.eu/thermal/thermofin-cooling-solutions",
-    images: [],
-    specs: [
-      { label: "Nominal capacity", value: "250 kW @ Δt 10 K" },
-      { label: "Fans", value: "EC, 6× Ø 800 mm" },
-      { label: "Sound pressure", value: "≤ 58 dB(A) @ 10 m" },
-      { label: "Connections", value: "DN100 flanged inlet / outlet" },
-      { label: "Adiabatic ready", value: "Yes — pad kit optional" },
-    ],
-    datasheets: [
-      {
-        label: "TDHF 250 datasheet (EN / DE)",
-        url: "https://cdn.virasmart.eu/datasheets/thermofin-tdhf-250.pdf",
-      },
-    ],
-    collectionHandles: ["thermal-equipment", "thermofin", "dry-coolers"],
-    tags: ["Dry Cooler", "Thermofin", "Industrial"],
-    availableForQuotation: true,
-  },
-  {
-    id: "gid://virasmart/Product/thermofin-adiabatic-pad-kit",
-    handle: "thermofin-adiabatic-pad-kit",
-    title: "Thermofin Adiabatic Pre-Cooling Pad Kit (TDHF Series)",
-    sku: "TF-AD-PAD-TDHF",
-    vendor: "Thermofin",
-    productType: "Adiabatic Accessory",
-    shortDescription:
-      "Retrofit adiabatic pre-cooling kit for Thermofin TDHF dry coolers. Wetted cellulose pads lower the intake-air temperature on hot days, restoring the capacity the dry cooler would otherwise lose when ambient rises above the design point. Water is consumed only above a configurable setpoint.",
-    description:
-      "The TDHF adiabatic pad kit is a bolt-on accessory — it does not work on its own. When ambient temperature exceeds a configurable setpoint, water is fed to the cellulose pads through a 3/4″ BSP filtered connection; incoming air passes through the wetted pads and drops by several degrees before it reaches the coil bank, so the dry cooler sees cooler intake air and recovers the duty lost to rising ambient. Below the setpoint the pads stay dry — so over a Baltic or Nordic year, water consumption is limited to summer peaks. Pad material is cellulose, anti-algae treated; filter and activation valves are included. Distinction from the bare TDHF dry cooler: the base unit consumes no water but loses capacity on hot days; the pad kit adds summer water consumption in exchange for that recovered capacity. Engineering implication: a TDHF sized for design ambient + adiabatic pad kit typically replaces a larger dry cooler sized for worst-case ambient — smaller footprint, lower fan power most of the year, water use only at peak.",
-    application:
-      "Capacity recovery on existing TDHF installations that see summer ambient peaks (Southern European climates, peak-demand industrial sites); new data-centre free-cooling loops where the alternative is doubling the coil bank to cover the hottest hours of the year. Commissioned together with the dry cooler or retrofitted on the installed base.",
-    certifications: "CE",
-    leadTime: "4–6 weeks",
-    solutionUrl: "https://virasmart.eu/thermal/thermofin-cooling-solutions",
-    images: [],
-    specs: [
-      { label: "Compatible with", value: "Thermofin TDHF series" },
-      { label: "Activation", value: "Ambient > configurable setpoint" },
-      { label: "Water connection", value: "3/4\" BSP, filtered" },
-      { label: "Pad material", value: "Cellulose, anti-algae treated" },
-    ],
-    datasheets: [
-      {
-        label: "Adiabatic pad kit datasheet",
-        url: "https://cdn.virasmart.eu/datasheets/thermofin-adiabatic.pdf",
-      },
-    ],
-    collectionHandles: ["thermal-equipment", "thermofin"],
-    tags: ["Adiabatic", "Thermofin", "Industrial"],
     availableForQuotation: true,
   },
 ];
